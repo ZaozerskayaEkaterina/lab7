@@ -1,4 +1,5 @@
 db = {
+  
   "auto_school_name": "АвтоШкола №1",
   "address": "ул. Дорожная, 45",
   "students": [
