@@ -1,6 +1,5 @@
 import utils.json_service as json_service
 
-
 def get_one_by_id(id):
     db = json_service.get_database()
 
@@ -24,6 +23,7 @@ def update_one_by_id(id, auto):
         if elem["id"] == id:
 
             elem["name"] = auto["name"]
+            elem["number"] = auto["number"]
             elem["group_id"] = auto["group_id"]
 
             json_service.set_database(db)

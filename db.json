@@ -41,18 +41,6 @@
         "phone": "+5678901234"
       },
       "group_id": 2
-    },
-    {
-      "id": 5,
-      "name": "Студент Студент",
-      "age": "тт",
-      "contacts": {
-        "email": "ssssssss@example.com",
-        "phone": "+88899898998",
-        "groups_id": [
-          3
-        ]
-      }
     }
   ],
   "groups": [
@@ -63,15 +51,6 @@
       "students_id": [
         1,
         3
-      ]
-    },
-    {
-      "id": 2,
-      "name": "B",
-      "group_teacher_id": 2,
-      "students_id": [
-        2,
-        4
       ]
     }
   ],
@@ -108,30 +87,6 @@
       "contacts": {
         "email": "petrov@example.com",
         "phone": "+3344556677"
-      }
-    },
-    {
-      "id": 4,
-      "name": "Тест Тест",
-      "groups_id": [
-        1,
-        2
-      ],
-      "contacts": {
-        "email": "тест@example.com",
-        "phone": "+333333"
-      }
-    },
-    {
-      "id": 5,
-      "name": "Учитель Учитель",
-      "groups_id": [
-        1,
-        2
-      ],
-      "contacts": {
-        "email": "тест@example.com",
-        "phone": "+333333333"
       }
     }
   ],

@@ -46,10 +46,17 @@ def delete_one_by_id(id):
     return {"message": f"Элемент с {id} не найден"}
 
 
-def create_one(teacher):
+def create_one(teacher): #создает новый id
     db = json_service.get_database()
 
     last_teacher_id = get_all()[-1]["id"]
-    db["teachers"].append({"id": last_teacher_id + 1, **teacher})
+    return add_one({"id": last_teacher_id + 1, **teacher})
+
+
+def add_one(teacher): #дабвляет нового учителя по созданному выше id
+    db = json_service.get_database()
+
+    db["teachers"].append(teacher)
 
     json_service.set_database(db)
+    return teacher
