@@ -59,4 +59,4 @@ def add_one(group): #дабвляет новую группу по создан�
     db["groups"].append(group)
 
     json_service.set_database(db)
-    return student
+    return group
