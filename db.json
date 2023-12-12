@@ -41,6 +41,30 @@
         "phone": "+5678901234"
       },
       "group_id": 2
+    },
+    {
+      "id": 5,
+      "name": "Студент Студент",
+      "age": "17",
+      "contacts": {
+        "email": "ssssssss@example.com",
+        "phone": "+88899898998",
+        "groups_id": [
+          3
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "name": "Студент Студент",
+      "age": "17",
+      "contacts": {
+        "email": "ssssssss@example.com",
+        "phone": "+88899898998",
+        "groups_id": [
+          3
+        ]
+      }
     }
   ],
   "groups": [
