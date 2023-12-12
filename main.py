@@ -1,28 +1,45 @@
-import components.teachers.service_t as teacher
+import services
 
+a = input('what do you want:  ')
 
-print(teacher.create_one({
-      "name": "Учитель Учитель",
-      "groups_id": [
-          1,
-          2
-      ],
-      "contacts": {
-          "email": "yyyyyyyyy@example.com",
-          "phone": "+333333333"
-      }}))
+if a == 'create':
+    print(services.create_one(tbl=input('table: '), candidate={
+        "name": "Студент Студент",
+        "age": "тт",
+        "contacts": {
+            "email": "ssssssss@example.com",
+            "phone": "+88899898998",
+        "groups_id": [
+                3
+            ]
+        }}))
 
+if a == 'delete':
+    print(services.delete_one_by_id(tbl=input('table: '), id=int(input('id: '))))
 
-#print(teacher.delete_one_by_id(4))
+if a == 'upload':
+    print(services.update_one_by_id(tbl=input('table: '), candidate={
+        "name": "Новый Чел",
+        "age": "99",
+        "contacts": {
+          "email": "newchellll@example.com",
+          "phone": "+7777777777",
+        "group_id": [
+          1
+        ]
+        }}))
 
-# print(teacher.get_all())
+if a == 'get one':
+    print(services.update_one_by_id(tbl=input('table: '), id=int(input('id: '))))
 
-# print(teacher.get_one_by_id(1))
+if a == 'get all':
+    print(services.get_all(tbl=input('table: ')))
 
-# print(teacher.update_one_by_id(4, {
-#       "name": "Новый Учитель",
-#       "contacts": {
-#           "email": "нет@example.com",
-#           "phone": "+1111111111"
-#       }}))
+if a == 'new teacher':
+    print(services.teacher2group(teacher_id=int(input('teacher id: ')), group_id=int(input('group id: '))))
 
+if a == 'new student':
+    print(services.student2group(student_id=int(input('student id: ')), group_id=int(input('group id: '))))
+
+else:
+    print('error of command')

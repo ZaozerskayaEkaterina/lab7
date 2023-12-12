@@ -1,19 +1,17 @@
 import services as student
 
-
 print(student.create_one(student, {
-      "name": "Студент Студент",
-      "age": "тт",
-      "contacts": {
-          "email": "ssssssss@example.com",
-          "phone": "+88899898998",
-      "groups_id": [
-          3
-      ],
-      }}))
+    "name": "Студент Студент",
+    "age": "тт",
+    "contacts": {
+        "email": "ssssssss@example.com",
+        "phone": "+88899898998",
+    "groups_id": [
+            3
+        ],
+    }}))
 
-
-#print(student.delete_one_by_id(4))
+# print(student.delete_one_by_id(4))
 
 # print(student.get_all())
 

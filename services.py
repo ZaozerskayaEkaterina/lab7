@@ -48,6 +48,12 @@ def delete_one_by_id(tbl, id):
         if elem["id"] == id:
 
             candidate = db[tbl].pop(i)
+            if tbl == 'teachers':  # если удаляем учителя, то надо удалить его из всех групп
+                for gr in db['groups']:
+                    for k, tea in enumerate(gr['teachers_id']):
+                        if tea == id:
+                            gr['teachers_id'].pop(k)
+                            break
 
             if tbl == 'students':  # если удаляем ученика, то надо удалить его из всех групп
                 for gr in db['groups']:
@@ -77,6 +83,21 @@ def add_one(tbl, candidate):
 
     set_database(db)
     return candidate
+
+
+def teacher2group(teacher_id, group_id):
+    db = get_database()
+
+    for gr in db['groups']:
+        if gr["id"] == group_id:
+            for tea in gr['teachers_id']:
+                if tea == teacher_id:
+                    return {"message": f"Учитель {teacher_id} уже есть в группе {group_id}"}
+            gr['teachers_id'].append(teacher_id)
+            set_database(db)
+            return gr
+
+    return {"message": f"Группа {group_id} не найдена"}
 
 
 def student2group(student_id, group_id):
