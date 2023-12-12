@@ -44,27 +44,23 @@
     },
     {
       "id": 5,
-      "name": "Студент Студент",
-      "age": "17",
+      "name": "Крутой Студент111",
+      "age": 11,
       "contacts": {
         "email": "ssssssss@example.com",
-        "phone": "+88899898998",
-        "groups_id": [
-          3
-        ]
-      }
+        "phone": "+88899898998"
+      },
+      "group_id": 3
     },
     {
       "id": 6,
-      "name": "Студент Студент",
-      "age": "17",
+      "name": "Крутой Студент222",
+      "age": 22,
       "contacts": {
         "email": "ssssssss@example.com",
-        "phone": "+88899898998",
-        "groups_id": [
-          3
-        ]
-      }
+        "phone": "+88899898998"
+      },
+      "group_id": 3
     }
   ],
   "groups": [
@@ -92,6 +88,29 @@
         1,
         4,
         3
+      ]
+    },
+    {
+      "id": 3,
+      "name": "SSS",
+      "group_teacher_id": [
+        3
+      ],
+      "students_id": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": 4,
+      "name": "B",
+      "group_teacher_id": [
+        3
+      ],
+      "students_id": [
+        1,
+        2,
+        6
       ]
     }
   ],
@@ -129,6 +148,17 @@
         "email": "petrov@example.com",
         "phone": "+3344556677"
       }
+    },
+    {
+      "id": 4,
+      "name": "Крутой Учитель",
+      "groups_id": [
+        3
+      ],
+      "contacts": {
+        "email": "yyyyyyyyy@example.com",
+        "phone": "+333333333"
+      }
     }
   ],
   "autos": [
@@ -142,10 +172,18 @@
     },
     {
       "id": 2,
-      "name": "lada",
-      "number": "aa123a",
+      "name": "new lada",
+      "number": "sd646s",
       "group_id": [
-        2
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "name": "new lada",
+      "number": "sd646s",
+      "group_id": [
+        1
       ]
     }
   ]

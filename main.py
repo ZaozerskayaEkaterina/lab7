@@ -3,42 +3,135 @@ while True:
     a = input('what do you want:  ')
 
     if a == 'create':
-        print(services.create_one(tbl=input('table: '), candidate={
-            "name": "Студент Студент",
-            "age": "17",
+        tbl = input('in which table:  ')
+        if tbl == 'students':
+            print(services.create_one(tbl, candidate={
+                "name": "Студент Студент",
+                "age": "17",
+                "contacts": {
+                    "email": "ssssssss@example.com",
+                    "phone": "+88899898998",
+                "groups_id": [
+                        3
+                    ]
+                }}))
+        elif tbl == 'teachers':
+            print(services.create_one(tbl, candidate={
+                "name": "Учитель Учитель",
+                "groups_id": [
+                    1
+                ],
+                "contacts": {
+                    "email": "yyyyyyyyy@example.com",
+                    "phone": "+333333333"
+                }}))
+        elif tbl == 'autos':
+            print(services.create_one(tbl, candidate={
+                "name": "new lada",
+                "number": "sd646s",
+                "group_id": [1]
+                }))
+        elif tbl == 'groups':
+            print(services.create_one(tbl, candidate={
+                "name": "B",
+                "group_teacher_id": [3],
+                "students_id": [
+                        1,
+                        2]
+                }))
+
+    elif a == 'create group':
+        db = services.get_database()
+        last_teacher_id = services.get_all('teachers')[-1]["id"]
+        last_group_id = services.get_all('groups')[-1]["id"]
+        last_student_id = services.get_all('students')[-1]["id"]
+
+        print(services.add_one(tbl='teachers', candidate={
+            "id": last_teacher_id + 1,
+            "name": "Крутой Учитель",
+            "groups_id": [last_group_id + 1],
+            "contacts": {
+                "email": "yyyyyyyyy@example.com",
+                "phone": "+333333333"
+            }})),
+        print(services.add_one(tbl='students', candidate={
+            "id": last_student_id + 1,
+            "name": "Крутой Студент111",
+            "age": 11,
             "contacts": {
                 "email": "ssssssss@example.com",
-                "phone": "+88899898998",
-            "groups_id": [
-                    3
-                ]
-            }}))
+                "phone": "+88899898998"},
+            "group_id": last_group_id + 1
+        })),
+        print(services.add_one(tbl='students', candidate={
+            "id": last_student_id + 2,
+            "name": "Крутой Студент222",
+            "age": 22,
+            "contacts": {
+                "email": "ssssssss@example.com",
+                "phone": "+88899898998"},
+            "group_id": last_group_id + 1
+        })),
+        print(services.add_one(tbl='groups', candidate={
+            "id": last_group_id + 1,
+            "name": "SSS",
+            "group_teacher_id": [last_teacher_id],
+            "students_id": [
+                last_student_id + 1,
+                last_student_id + 2]
+        }))
 
-    if a == 'delete':
+    elif a == 'delete':
         print(services.delete_one_by_id(tbl=input('table: '), id=int(input('id: '))))
 
-    if a == 'upload':
-        print(services.update_one_by_id(tbl=input('table: '), id=int(input('id: ')), candidate={
-            "name": "Обновленный Студент",
-            "age": "99",
-            "contacts": {
-              "email": "newchellll@example.com",
-              "phone": "+7777777777",
-            "group_id": [
-              1
-            ]
-            }}))
+    elif a == 'update':
+        tbl = input('in which table:  ')
+        if tbl == 'students':
+            print(services.update_one_by_id(tbl, id=int(input('id: ')), candidate={
+                "name": "Обновленный Студент",
+                "age": "99",
+                "contacts": {
+                    "email": "newchellll@example.com",
+                    "phone": "+7777777777",
+                    "group_id": [
+                        1
+                    ]
+                }}))
+        elif tbl == 'teachers':
+            print(services.update_one_by_id(tbl, id=int(input('id: ')), candidate={
+                "name": "Обновленный Учитель",
+                "groups_id": [
+                    1
+                ],
+                "contacts": {
+                    "email": "yyyyyyyyy@example.com",
+                    "phone": "+333333333"
+                }}))
+        elif tbl == 'autos':
+            print(services.update_one_by_id(tbl, id=int(input('id: ')), candidate={
+                "name": "new lada",
+                "number": "sd646s",
+                "group_id": [1]
+            }))
+        elif tbl == 'groups':
+            print(services.update_one_by_id(tbl, id=int(input('id: ')), candidate={
+                "name": "B",
+                "group_teacher_id": [3],
+                "students_id": [
+                    1,
+                    2]
+            }))
 
-    if a == 'get one':
+    elif a == 'get one':
         print(services.update_one_by_id(tbl=input('table: '), id=int(input('id: '))))
 
-    if a == 'get all':
+    elif a == 'get all':
         print(services.get_all(tbl=input('table: ')))
 
-    if a == 'new teacher':
+    elif a == 'add teacher in group':
         print(services.teacher2group(teacher_id=int(input('teacher id: ')), group_id=int(input('group id: '))))
 
-    if a == 'new student':
+    elif a == 'add student in group':
         print(services.student2group(student_id=int(input('student id: ')), group_id=int(input('group id: '))))
 
     else:

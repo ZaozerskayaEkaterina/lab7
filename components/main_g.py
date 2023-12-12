@@ -44,13 +44,13 @@ print(group.add_one({
         last_student_id + 2]
     }))
 
-# print(group.create_one({
-#       "name": "B",
-#       "group_teacher_id": [3],
-#       "students_id": [
-#             1,
-#             2]
-#       }))
+print(group.create_one({
+      "name": "B",
+      "group_teacher_id": [3],
+      "students_id": [
+            1,
+            2]
+      }))
 
 #print(group.delete_one_by_id(3))
 
