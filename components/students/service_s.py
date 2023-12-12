@@ -22,7 +22,6 @@ def update_one_by_id(id, student):
 
     for i, elem in enumerate(db["students"]):
         if elem["id"] == id:
-            
             elem["name"] = student["name"]
             elem["age"] = student["age"]
             elem["contacts"] = student["contacts"]
@@ -39,7 +38,6 @@ def delete_one_by_id(id):
 
     for i, elem in enumerate(db["students"]):
         if elem["id"] == id:
-
             candidate = db["students"].pop(i)
             json_service.set_database(db)
 
@@ -48,14 +46,14 @@ def delete_one_by_id(id):
     return {"message": f"Элемент с {id} не найден"}
 
 
-def create_one(student): #создает новый id
+def create_one(student):  # создает новый id
     db = json_service.get_database()
 
     last_student_id = get_all()[-1]["id"]
     return add_one({"id": last_student_id + 1, **student})
 
 
-def add_one(student): #дабвляет нового студента по созданному выше id
+def add_one(student):  # дабвляет нового студента по созданному выше id
     db = json_service.get_database()
 
     db["students"].append(student)

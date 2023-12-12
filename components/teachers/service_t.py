@@ -25,7 +25,7 @@ def update_one_by_id(id, teacher):
 
             elem["name"] = teacher["name"]
             elem["contacts"] = teacher["contacts"]
-
+            elem["groups_id"] = teacher["groups_id"]
             json_service.set_database(db)
             return elem
 

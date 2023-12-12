@@ -1,14 +1,14 @@
-import components.students.service_s as student
+import services as student
 
 
-print(student.create_one({
+print(student.create_one(student, {
       "name": "Студент Студент",
       "age": "тт",
       "contacts": {
           "email": "ssssssss@example.com",
           "phone": "+88899898998",
       "groups_id": [
-            3
+          3
       ],
       }}))
 
@@ -25,5 +25,7 @@ print(student.create_one({
 #       "contacts": {
 #           "email": "newchellll@example.com",
 #           "phone": "+7777777777"
-#           "group_id": 1
+#       "group_id": [
+#           1
+#       ],
 #       }}))

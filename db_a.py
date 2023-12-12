@@ -44,14 +44,16 @@ db = {
             "email": "petpet@example.com",
             "phone": "+5678901234"
         },
-     "group_id": 2
+      "group_id": 2
     }
   ],
   "groups": [
     {
       "id": 1,
       "name": "A",
-      "group_teacher_id": 1,
+      "group_teacher_id": [
+        1
+      ],
       "students_id": [
         1,
         3
@@ -60,7 +62,9 @@ db = {
     {
       "id": 2,
       "name": "B",
-      "group_teacher_id": 2,
+      "group_teacher_id": [
+        2
+      ],
       "students_id": [
         2,
         4

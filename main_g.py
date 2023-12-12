@@ -12,7 +12,7 @@ last_student_id = student.get_all()[-1]["id"]
 print(teacher.add_one({
       "id": last_teacher_id + 1,
       "name": "Крутой Учитель",
-      "groups_id": [ last_group_id + 1],
+      "groups_id": [last_group_id + 1],
       "contacts": {
           "email": "yyyyyyyyy@example.com",
           "phone": "+333333333"
@@ -38,7 +38,7 @@ print(student.add_one({
 print(group.add_one({
     "id": last_group_id + 1,
     "name": "SSS",
-    "group_teacher_id": last_teacher_id,
+    "group_teacher_id": [last_teacher_id],
     "students_id": [
         last_student_id + 1,
         last_student_id + 2]
@@ -46,7 +46,7 @@ print(group.add_one({
 
 # print(group.create_one({
 #       "name": "B",
-#       "group_teacher_id": 3,
+#       "group_teacher_id": [3],
 #       "students_id": [
 #             1,
 #             2]
@@ -61,7 +61,7 @@ print(group.add_one({
 
 # print(group.update_one_by_id(2,{
 #       "name": "Новая Z",
-#       "group_teacher_id": 5,
+#       "group_teacher_id": [5],
 #       "students_id": [
 #         3]
 #       }))
