@@ -63,7 +63,6 @@ def delete_one_by_id(tbl, id):
                             break
 
             set_database(db)
-
             return candidate
 
     return {"message": f"Элемент {id} в таблице  {tbl} не найден"}
@@ -94,6 +93,7 @@ def teacher2group(teacher_id, group_id):
                 if tea == teacher_id:
                     return {"message": f"Учитель {teacher_id} уже есть в группе {group_id}"}
             gr['teachers_id'].append(teacher_id)
+
             set_database(db)
             return gr
 

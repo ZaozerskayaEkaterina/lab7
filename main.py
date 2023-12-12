@@ -21,8 +21,8 @@ while True:
                 }}))
         elif tbl == 'autos':
             print(services.create_one(tbl, candidate={
-                "name": "new lada",
-                "number": "sd646s",
+                "name": "BatMobile",
+                "number": "xy111z",
                 "group_id": [1]
                 }))
         elif tbl == 'groups':
@@ -108,10 +108,10 @@ while True:
             }))
 
     elif a == 'get one':
-        print(services.update_one_by_id(tbl=input('table: '), id=int(input('id: '))))
+        print(services.get_one_by_id(tbl=input('table (students/teachers/autos/groups) : '), id=int(input('id: '))))
 
     elif a == 'get all':
-        print(services.get_all(tbl=input('table: ')))
+        print(services.get_all(tbl=input('table (students/teachers/autos/groups) : ')))
 
     elif a == 'add teacher in group':
         print(services.teacher2group(teacher_id=int(input('teacher id: ')), group_id=int(input('group id: '))))
