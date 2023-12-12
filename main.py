@@ -1,26 +1,20 @@
 import services
 while True:
-    a = input('what do you want:  ')
+    a = input('what do you want (create/delete/update/get one/get all/add teacher in group/add student in group) :  ')
 
     if a == 'create':
-        tbl = input('in which table:  ')
+        tbl = input('in which table (students/teachers/autos/groups) :  ')
         if tbl == 'students':
             print(services.create_one(tbl, candidate={
                 "name": "Студент Студент",
                 "age": "17",
                 "contacts": {
                     "email": "ssssssss@example.com",
-                    "phone": "+88899898998",
-                "groups_id": [
-                        3
-                    ]
+                    "phone": "+88899898998"
                 }}))
         elif tbl == 'teachers':
             print(services.create_one(tbl, candidate={
                 "name": "Учитель Учитель",
-                "groups_id": [
-                    1
-                ],
                 "contacts": {
                     "email": "yyyyyyyyy@example.com",
                     "phone": "+333333333"
@@ -49,7 +43,6 @@ while True:
         print(services.add_one(tbl='teachers', candidate={
             "id": last_teacher_id + 1,
             "name": "Крутой Учитель",
-            "groups_id": [last_group_id + 1],
             "contacts": {
                 "email": "yyyyyyyyy@example.com",
                 "phone": "+333333333"
@@ -60,8 +53,7 @@ while True:
             "age": 11,
             "contacts": {
                 "email": "ssssssss@example.com",
-                "phone": "+88899898998"},
-            "group_id": last_group_id + 1
+                "phone": "+88899898998"}
         })),
         print(services.add_one(tbl='students', candidate={
             "id": last_student_id + 2,
@@ -69,8 +61,7 @@ while True:
             "age": 22,
             "contacts": {
                 "email": "ssssssss@example.com",
-                "phone": "+88899898998"},
-            "group_id": last_group_id + 1
+                "phone": "+88899898998"}
         })),
         print(services.add_one(tbl='groups', candidate={
             "id": last_group_id + 1,
@@ -85,24 +76,18 @@ while True:
         print(services.delete_one_by_id(tbl=input('table: '), id=int(input('id: '))))
 
     elif a == 'update':
-        tbl = input('in which table:  ')
+        tbl = input('in which table (students/teachers/autos/groups) :  ')
         if tbl == 'students':
             print(services.update_one_by_id(tbl, id=int(input('id: ')), candidate={
                 "name": "Обновленный Студент",
                 "age": "99",
                 "contacts": {
                     "email": "newchellll@example.com",
-                    "phone": "+7777777777",
-                    "group_id": [
-                        1
-                    ]
+                    "phone": "+7777777777"
                 }}))
         elif tbl == 'teachers':
             print(services.update_one_by_id(tbl, id=int(input('id: ')), candidate={
                 "name": "Обновленный Учитель",
-                "groups_id": [
-                    1
-                ],
                 "contacts": {
                     "email": "yyyyyyyyy@example.com",
                     "phone": "+333333333"
